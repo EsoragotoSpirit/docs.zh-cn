@@ -32,19 +32,17 @@ ALTER STORAGE VOLUME [ IF EXISTS ] <storage_volume_name>
 示例一：禁用存储卷 `my_s3_volume`。
 
 ```Plain
-MySQL > ALTER STORAGE VOLUME my_s3_volume
-    -> SET ("enabled" = "false");
-Query OK, 0 rows affected (0.01 sec)
+ALTER STORAGE VOLUME my_s3_volume
+SET ("enabled" = "false");
 ```
 
 示例二：修改存储卷 `my_s3_volume` 的认证信息。
 
 ```Plain
-MySQL > ALTER STORAGE VOLUME my_s3_volume
-    -> SET (
-    ->     "aws.s3.use_instance_profile" = "true"
-    -> );
-Query OK, 0 rows affected (0.00 sec)
+ALTER STORAGE VOLUME my_s3_volume
+SET (
+    "aws.s3.use_instance_profile" = "true"
+);
 ```
 
 ## 相关 SQL
