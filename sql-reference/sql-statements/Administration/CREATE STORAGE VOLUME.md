@@ -323,7 +323,6 @@ PROPERTIES
     "aws.s3.access_key" = "xxxxxxxxxx",
     "aws.s3.secret_key" = "yyyyyyyyyy"
 );
-Query OK, 0 rows affected (0.05 sec)
 ```
 
 示例二：为 HDFS 集群创建存储卷 `my_hdfs_volume`，使用 Kerberos 认证，并启用该存储卷。
