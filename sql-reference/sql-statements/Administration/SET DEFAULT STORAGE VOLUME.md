@@ -27,8 +27,7 @@ SET <storage_volume_name> AS DEFAULT STORAGE VOLUME
 示例一：设置存储卷 `my_s3_volume` 为默认存储卷。
 
 ```SQL
-MySQL > SET my_s3_volume AS DEFAULT STORAGE VOLUME;
-Query OK, 0 rows affected (0.01 sec)
+SET my_s3_volume AS DEFAULT STORAGE VOLUME;
 ```
 
 ## 相关 SQL
