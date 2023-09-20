@@ -27,8 +27,7 @@ DROP STORAGE VOLUME [ IF EXISTS ] <storage_volume_name>
 示例一：删除存储卷 `my_s3_volume`。
 
 ```Plain
-MySQL > DROP STORAGE VOLUME my_s3_volume;
-Query OK, 0 rows affected (0.01 sec)
+DROP STORAGE VOLUME my_s3_volume;
 ```
 
 ## 相关 SQL
