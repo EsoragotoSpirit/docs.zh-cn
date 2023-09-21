@@ -277,13 +277,11 @@ PROPERTIES
 
   - 如果您的 HDFS 集群启用了 NameNode HA 配置，请额外设置以下属性：
 
-    ```SQL
     "dfs.nameservices" = "<ha_cluster_name>",
     "dfs.ha.namenodes.<ha_cluster_name>" = "ha_n1,ha_n2",
     "dfs.namenode.rpc-address.<ha_cluster_name>.<NameNode1>" = "<hdfs_host>:<hdfs_port>",
     "dfs.namenode.rpc-address.<ha_cluster_name>.<NameNode2>" = "<hdfs_host>:<hdfs_port>",
     "dfs.client.failover.proxy.provider" = "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
-    ```
 
 -->
 
