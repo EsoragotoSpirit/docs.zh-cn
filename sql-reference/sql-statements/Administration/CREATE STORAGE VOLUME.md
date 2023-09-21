@@ -273,7 +273,9 @@ PROPERTIES
     >
     > 每个 StarRocks 集群仅支持创建一个使用 Kerberos 认证的 HDFS 存储卷。
 
-<!--- 如果您的 HDFS 集群启用了 NameNode HA 配置，请额外设置以下属性：
+<!--
+
+  - 如果您的 HDFS 集群启用了 NameNode HA 配置，请额外设置以下属性：
 
     ```SQL
     "dfs.nameservices" = "<ha_cluster_name>",
@@ -281,17 +283,19 @@ PROPERTIES
     "dfs.namenode.rpc-address.<ha_cluster_name>.<NameNode1>" = "<hdfs_host>:<hdfs_port>",
     "dfs.namenode.rpc-address.<ha_cluster_name>.<NameNode2>" = "<hdfs_host>:<hdfs_port>",
     "dfs.client.failover.proxy.provider" = "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
-    ```-->
+    ```
 
-    | **属性**                                              | **描述**                                                     |
-    | ----------------------------------------------------- | ------------------------------------------------------------ |
-    | enabled                                               | 是否启用当前存储卷。默认值：`false`。已禁用的存储卷无法被引用。 |
-    | hadoop.security.authentication                        | 指定认证方式。有效值：`simple`（默认） 和 `kerberos`。`simple` 表示简单认证，即无认证。`kerberos` 表示 Kerberos 认证。 |
-    | username                                              | 用于访问 HDFS 集群中 NameNode 节点的用户名。                 |
-    | password                                              | 用于访问 HDFS 集群中 NameNode 节点的密码。                   |
-    | kerberos_principal                                    | 用于指定 Kerberos 的用户或服务 (Principal)。每个 Principal 在 HDFS 集群内唯一，由如下三部分组成：<ul><li>`username` 或 `servicename`：HDFS 集群中用户或服务的名称。</li><li>`instance`：HDFS 集群要认证的节点所在服务器的名称，用来保证用户或服务全局唯一。比如，HDFS 集群中有多个 DataNode 节点，各节点需要各自独立认证。</li><li>`realm`：域，必须全大写。</li></ul>示例：`nn/zelda1@ZELDA.COM`。 |
-    | kerberos_keytab                                       | 用于指定 Kerberos 的 Key Table（简称为“keytab”）文件的路径。 |
-    | kerberos_keytab_content                               | 用于指定 Kerberos 中 keytab 文件的内容经过 Base64 编码之后的内容。该参数跟 `kerberos_keytab` 参数二选一配置。 |
+-->
+
+| **属性**                                              | **描述**                                                     |
+| ----------------------------------------------------- | ------------------------------------------------------------ |
+| enabled                                               | 是否启用当前存储卷。默认值：`false`。已禁用的存储卷无法被引用。 |
+| hadoop.security.authentication                        | 指定认证方式。有效值：`simple`（默认） 和 `kerberos`。`simple` 表示简单认证，即无认证。`kerberos` 表示 Kerberos 认证。 |
+| username                                              | 用于访问 HDFS 集群中 NameNode 节点的用户名。                 |
+| password                                              | 用于访问 HDFS 集群中 NameNode 节点的密码。                   |
+| kerberos_principal                                    | 用于指定 Kerberos 的用户或服务 (Principal)。每个 Principal 在 HDFS 集群内唯一，由如下三部分组成：<ul><li>`username` 或 `servicename`：HDFS 集群中用户或服务的名称。</li><li>`instance`：HDFS 集群要认证的节点所在服务器的名称，用来保证用户或服务全局唯一。比如，HDFS 集群中有多个 DataNode 节点，各节点需要各自独立认证。</li><li>`realm`：域，必须全大写。</li></ul>示例：`nn/zelda1@ZELDA.COM`。 |
+| kerberos_keytab                                       | 用于指定 Kerberos 的 Key Table（简称为“keytab”）文件的路径。 |
+| kerberos_keytab_content                               | 用于指定 Kerberos 中 keytab 文件的内容经过 Base64 编码之后的内容。该参数跟 `kerberos_keytab` 参数二选一配置。 |
 
 <!--
 
